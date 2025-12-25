@@ -1,3 +1,4 @@
+/* --- Reset & Base --- */
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +7,13 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #001a33, #003366, #0055aa); /* Gradient blue tones for networking theme */
-    color: #fff;
+    background: linear-gradient(135deg, #a3d9ff, #ffffff); /* Morning mode by default */
+    color: #001a33;
     line-height: 1.6;
-    transition: background 0.5s;
+    transition: background 0.5s, color 0.5s;
 }
 
+/* --- Header --- */
 header {
     display: flex;
     justify-content: center;
@@ -22,23 +24,30 @@ header {
 .header-content {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .profile-img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-right: 20px;
-    border: 2px solid #66ccff;
+    border: 2px solid #3399ff;
 }
 
 .name-glow {
     font-size: 2.5em;
     font-weight: bold;
-    color: #66ccff;
+    color: #0066cc;
     text-shadow: 0 0 8px #66ccff, 0 0 15px #3399ff;
 }
 
+.mode-btn {
+    padding: 6px 12px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* --- Sections --- */
 main {
     padding: 20px;
 }
@@ -47,9 +56,9 @@ section {
     padding: 25px;
     margin: 20px auto;
     max-width: 900px;
-    background-color: rgba(0, 26, 51, 0.85);
+    background-color: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s, border-left 0.3s;
@@ -66,7 +75,7 @@ ul {
 }
 
 a {
-    color: #66ccff;
+    color: #0066cc;
     text-decoration: none;
 }
 
@@ -77,4 +86,18 @@ a:hover {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+    background: linear-gradient(135deg, #001a33, #003366);
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #66ccff;
+}
+
+body.dark-mode section {
+    background-color: rgba(0, 26, 51, 0.85);
 }
